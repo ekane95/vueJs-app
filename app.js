@@ -21,8 +21,10 @@ Vue.createApp({
   },
   methods: {
     addGoal() {
-      this.goals.push(this.enteredValue);
-      this.enteredValue = '';
+      if (this.enteredValue !== '') {
+        this.goals.push(this.enteredValue);
+        this.enteredValue = '';
+      }
     }
   }
 }).mount('#app');
